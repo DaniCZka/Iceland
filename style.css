@@ -1,0 +1,297 @@
+/* nejsme vcerejsi, pouzivame moderni box model */
+*, :after, :before { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+/* HLAVICKA */
+
+.hlavicka{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("images/island-hlavicka.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 5px;
+    color: white;
+    text-align: center;
+}
+
+.titulek {
+    font-family: 'Raleway', serif;
+    font-size: 60px;
+}
+
+.perex{
+   margin: 15px;
+   text-align: center;
+}
+
+.autor{
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.autor::before{
+    content: "";
+    display:block;
+    width: 80px;
+    height: 2px;
+    background-color: white;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+/* MENU */
+
+.menu{
+    list-style: none;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 30px;   
+}
+
+.menu a{
+   text-decoration: none;
+   color: rgb(179, 176, 176);
+   font-family: sans-serif;
+   font-size: 17px;
+   border-bottom: 2px solid rgb(230, 228, 228);
+}
+
+
+/* OBSAH */
+p{
+    text-align: left;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+img{
+    width: 100%;
+    padding-top: 40px;
+}
+
+.popisek,
+.popisek a,
+.popisek-copy{
+    color: rgb(179, 176, 176);
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+h2{
+    padding: 20px 20px 20px 40px;
+    font-family: sans-serif;
+    font-size: 27px;
+}
+
+h2::after{
+    content: "";
+    display:block;
+    width: 80px;
+    height: 5px;
+    background-color: rgb(67, 142, 185); 
+    margin-top: 25px;
+    margin-left: -40px;
+    margin-bottom: 25px;
+    
+}
+
+/* FOTOGALERIE */
+
+.galerie{
+    margin-top: -43px;
+}
+
+.foto{
+    font-weight: bold;
+}
+
+.popisek-copy{
+    font-weight: normal;
+}
+
+.foto img {
+    width: 100%;
+    background-size: cover;
+    padding: 0;
+}
+
+.popisek {
+    text-align: center;
+    font-family: 'Raleway', serif;
+    font-weight: 600;
+    color: rgba(128, 128, 128, 0.99);
+    line-height: normal;
+    margin: 0; 
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+
+/* PATICKA */
+.galerie{
+   box-shadow: 0 5px 30px 5px rgba(0, 0, 0, 0.15);
+}
+
+.paticka p{
+    font-size: 9px;
+    margin-left: 25px;
+    padding-top: 20px;
+    margin-bottom: -20px;
+    padding-bottom: 20px;
+    color: rgba(128, 128, 128, 0.80)
+}
+
+.paticka a {
+    color: rgba(128, 128, 128, 0.80);
+
+}
+
+
+/*tablet:*/
+@media (min-width:500px){
+    .menu{
+        display: flex;
+        margin: 25px 0 40px 0;
+    }
+
+    .menu a{
+        border-bottom: 0;
+        font-size: 14px;
+    }
+
+    .menu li{
+        flex: 1 1 25%;  
+        border: 2px solid rgb(235, 234, 234);
+        border-right: 0;
+    }
+    
+   .menu li:first-child{
+       border-left: 0;
+   }
+
+   .uvod,
+   .proc-jet,
+   .musite-videt {
+       position: relative;
+   }
+
+   .uvod .popisek,
+   .proc-jet .popisek,
+   .musite-videt .popisek{
+    position: absolute;
+    color: white;
+    right: 20px;
+    bottom: 10px;
+    }
+    
+    .popisek a{
+        color: white;
+        white-space: nowrap;
+    }
+
+    #Yiannis{
+        left: 650px;
+    }
+    .galerie{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .foto{
+        flex-basis: 50%;
+    }
+
+    .popisek-copy1 ,
+    .popisek-copy1 a{
+    color: rgba(201, 201, 201, 0.61);
+}
+    .popisek{
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+    .foto .popisek{
+        padding: 5px;
+        background-color: rgba(0, 0, 0, 0.7) ; 
+        color: white;
+        transition: all 0.3s;
+        opacity: 0;
+        font-size: 12px;
+        margin-top: -45px;
+        transform: translateY(9px);
+        font-weight: 300;
+    }
+    .foto:hover .popisek{
+        opacity: 1;
+        transform: translateY(-0px)
+    }
+    .paticka p{
+        margin-left: -35px;
+    }
+   
+}
+
+/*pc:*/
+@media (min-width:1000px){
+    .perex{
+        padding-left: 400px;
+        padding-right: 400px;
+    }
+
+    .obsah{
+        width: 960px;
+        margin-top: -40px;
+        align-items: center;
+        position: relative;
+        left: 18%;
+        background-color: white;  
+    }
+
+    .menu{
+        flex-direction: column;
+        padding: 50px;
+        width: 31%;
+        margin: 0;
+        float: left;
+    }
+
+    .menu li{
+        border-right: none;
+        border-top: none;
+        border-left: none;
+        text-align: left;
+        width: 100%;
+    }
+
+    .uvodni-text{
+        padding-top: 40px;
+        margin-left: 260px;
+    }
+
+    .proc-island{
+        margin-right: 230px;
+    }
+
+    .k-videni,
+    .k-videniII{
+        margin-left: 260px;
+    }
+
+    .galerie{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    } 
+   .paticka{
+       margin-left: 220px;   }
+}
